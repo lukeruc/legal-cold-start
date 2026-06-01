@@ -38,6 +38,13 @@ git clone https://github.com/lukeruc/legal-cold-start.git .
 
 **安装完成。** 在这个目录下打开 Claude Code 即可。
 
+> ⚠️ **在开始之前**：你需要自己安装和配置法律工具。本项目的冷启动会帮你验证它们是否真的可用，但不会替你安装。根据你的角色，可能需要：
+> - 法律数据库：yd-law、Westlaw、HeinOnline 等
+> - 企业工商查询：qcc 等
+> - 文档处理：agentdocx 等
+>
+> 这些工具作为 Claude Code 的 skill 或 MCP 连接器安装。参见 Claude Code 文档中的 skill 和 MCP 配置方式。
+
 ## 首次使用
 
 打开 Claude Code 后，模型检测到尚未配置，自动开始对话：
