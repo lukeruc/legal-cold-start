@@ -13,9 +13,8 @@
 **研究领域：**
 - [PLACEHOLDER]
 
-## 方法论
+## 研究法域
 
-**理论框架/研究方法：** [PLACEHOLDER — 如 "法教义学""比较法""法律实证研究""法经济学"]
 **主要研究法域：** [PLACEHOLDER]
 **比较法/国际法维度：** [PLACEHOLDER]
 
@@ -30,21 +29,11 @@
 
 **主要语言：** [PLACEHOLDER]
 **常用引用法规体系：** [PLACEHOLDER]
-**常用文献源/数据库：** [PLACEHOLDER — 如 "知网/CSSCI/HeinOnline/Westlaw/北大法宝"]
 
 ## 常用工具
 
 [PLACEHOLDER]
 
-## 当前项目
-
-*说 "add a project" 新增。*
-
-| 项目 | 简述 | 状态 | 截止/阶段 |
-|------|------|------|-----------|
-| …… | …… | …… | …… |
-
 ---
 
 *编辑此文件直接修改。说 "update my profile" 重新对话配置。*
-*说 "add a project" 新增项目。*
