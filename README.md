@@ -39,6 +39,8 @@ git clone https://github.com/lukeruc/legal-cold-start.git .
 **安装完成。** 在这个目录下打开 Claude Code 即可。
 
 > ⚠️ **在开始之前**：你需要自己安装和配置法律数据库、文档处理等工具。本项目的冷启动会帮你验证它们是否真的可用，但不会替你安装。工具作为 Claude Code 的 skill 或 MCP 连接器安装，配置方式参见 Claude Code 文档。
+>
+> 文档处理推荐 [agentdocx](https://github.com/lukeruc/agentdocx)——一个专门为法律文档设计的 .docx 读写与修订 skill，支持 tracked changes 和批注。
 
 ## 首次使用
 
