@@ -12,9 +12,6 @@ cd ~/my-legal-work
 
 # 下载项目文件
 git clone https://github.com/lukeruc/legal-cold-start.git .
-
-# 初始化 git（可选，但建议保留版本记录）
-git init && git add -A && git commit -m "init legal workspace"
 ```
 
 或者手动操作：
