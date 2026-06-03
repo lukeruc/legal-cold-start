@@ -26,8 +26,7 @@
 │   → 读取 scripts/in-house.md 执行冷启动
 │
 └── 有 .md 文件
-    → 加载 profiles/ 下全部 .md 文件。
-      进入 操作规程。
+    → 进入 操作规程。
 ```
 
 冷启动脚本在 `scripts/` 下，仅在无 profile 时触发。
@@ -36,9 +35,13 @@
 
 ## 操作规程
 
-读取 `playbook/README.md` 了解结构。
+1. 加载 `.claude/profiles/` 下全部 `.md` 文件。
 
-process/ 下三个文件每次会话全量加载，不挑任务。其余路径由对应 skill 按需加载。
+2. 读取 `playbook/README.md` 了解结构。
+
+3. 全量加载 `playbook/process/` 下三个文件。
+
+4. 遇到对应任务时，按 playbook/README.md 中的约定加载对应路径。
 
 ---
 

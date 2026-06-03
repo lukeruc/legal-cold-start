@@ -8,7 +8,7 @@ This is the **infrastructure layer** of the Legal AI Workstation. The `coldstart
 
 Design documentation is maintained separately from the project files.
 
-Five function modules (contract-review, contract-analyze, rule-builder, evidence-organizer, document-drafter) are separate repos that consume this infrastructure via path and field contracts. They live as Claude Code skills under `.claude/skills/` in the user's work directory.
+Function modules live in `modules/` during development. When mature, they are extracted to independent repos and installed as Claude Code skills under `.claude/skills/` in the user's work directory. Modules consume the infrastructure layer via path and field contracts defined in the design documentation.
 
 ## Development — no build, no tests, no lint
 
