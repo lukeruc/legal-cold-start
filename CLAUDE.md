@@ -16,15 +16,15 @@ This is a pure configuration project. There is no build step, no test suite, no 
 
 ## Key files and their relationships
 
-- **`coldstart/CLAUDE.md`** — The main agent instructions that ship to users. Contains the startup state machine (check `STATUS: UNCONFIGURED`, placeholders, pause markers), the shared guardrails (citation provenance, currency trigger, jurisdiction detection, etc.), and the profile update mechanism.
-- **`coldstart/scripts/*.md`** — Cold-start interview script (in-house). Loaded by CLAUDE.md only during cold-start. Covers: seed-file extraction guide, dialogue outline, tool verification protocol, pause support, and the final write-to-profile template.
-- **`coldstart/scripts/in-house.md`** — Cold-start interview script. Contains conversation outline, seed-file extraction guide, and profile creation guidelines (six domains). Self-deletes after cold-start completes.
-- **`coldstart/.claude/settings.local.json`** — Permissions for the deployed template (currently only allows `git` commands).
+- **`coldstart/CLAUDE.md`** — The agent instructions that ship to users. Four sections: personality, routing (profile check → coldstart or normal operation), operating procedures, and workspace map.
+- **`coldstart/scripts/in-house.md`** — Cold-start interview script. Contains conversation outline, seed-file extraction guide, and six-domain profile creation guidelines with example. Self-deletes after cold-start completes.
+- **`coldstart/playbook/`** — Operating procedures. process/ (3 files, loaded every session) defines baseline rules. contracts/ (README + review/ + templates/) grows with use.
+- **`coldstart/.claude/`** — profiles/ (empty, filled by coldstart) and settings.local.json (permissions).
 
 ## Design invariants
 
 - **Scripts self-delete after cold-start.** The cleanup step removes `scripts/`. `.claude/profiles/` stays — it's the user's permanent profile. `CLAUDE.md`, `playbook/`, `sessions/`, `records/`, `archive/`, and `.claude/settings.local.json` also remain.
 - **Profiles only record what changes model output behavior.** Not contact lists, not org charts, not reference material. If a field wouldn't change how Claude responds, it doesn't belong in the profile.
 - **In-house counsel only (Phase 1).** The project starts with company counsel. Law firm and academic roles are deferred to later phases.
-- **Guardrails are in playbook/process/, not CLAUDE.md.** Per the concept design (Phase 1), operational rules live in `coldstart/playbook/process/` (6 files). CLAUDE.md only contains personality, routing, and the system map. Guardrails apply whether or not a profile has been configured.
+- **Guardrails are in playbook/process/, not CLAUDE.md.** Operational rules live in `coldstart/playbook/process/` (3 files: approach, information, role). CLAUDE.md only contains personality, routing, operating procedures reference, and the workspace map.
 - **Tool names are never hardcoded in guardrails.** Per commit `158a627`, all references to specific tools use placeholder terminology. The actual tool names come from the user's profile.

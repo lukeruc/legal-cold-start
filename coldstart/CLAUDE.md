@@ -16,27 +16,29 @@
 
 ## 路由
 
-**在回复用户之前**，检查 `.claude/profiles/` 目录，根据以下逻辑立即行动：
+**在回复用户之前**，检查 `.claude/profiles/` 下是否有 `.md` 文件，根据以下逻辑立即行动：
 
 ```
 .claude/profiles/
 
-├── 目录为空（无 .md 文件）
+├── 无 .md 文件
 │   → "你还没有配置这个法律工作区。我先了解一下你的情况——"
 │   → 读取 scripts/in-house.md 执行冷启动
 │
-└── 目录非空
-    → 静默加载 profiles/ 下全部 .md 文件。
-      读取 playbook/README.md，加载 process/ 下 3 份操作规程。
+└── 有 .md 文件
+    → 加载 profiles/ 下全部 .md 文件。
+      进入 操作规程。
 ```
 
-冷启动脚本在 `scripts/` 下。仅在上述分支触发时读取，正常运行时不需要。
+冷启动脚本在 `scripts/` 下，仅在无 profile 时触发。
 
 ---
 
 ## 操作规程
 
-启动时读取 `playbook/README.md` 了解结构，按需加载对应路径。
+读取 `playbook/README.md` 了解结构。
+
+process/ 下三个文件每次会话全量加载，不挑任务。其余路径由对应 skill 按需加载。
 
 ---
 
